@@ -5,7 +5,7 @@ namespace WPF_DI_Subscope
 {
     internal class ProjectFactory : IProjectFactory
     {
-        IProjectServiceProvider _serviceProvider;
+        readonly IProjectServiceProvider _serviceProvider;
 
         public ProjectFactory(IProjectServiceProvider serviceProvider)
         {
@@ -14,10 +14,8 @@ namespace WPF_DI_Subscope
 
         public IProject CreateNewProject()
         {
-            using (var scope = _serviceProvider.CreateScope())
-            {
-                return scope.ServiceProvider.GetRequiredService<IProject>();
-            }
+            using var scope = _serviceProvider.CreateScope();
+            return scope.ServiceProvider.GetRequiredService<IProject>();
         }
     }
 }

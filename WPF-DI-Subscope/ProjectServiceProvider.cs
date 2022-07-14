@@ -6,7 +6,7 @@ namespace WPF_DI_Subscope
 {
     internal class ProjectServiceProvider : IProjectServiceProvider
     {
-        IServiceProvider _serviceProvider;
+        readonly IServiceProvider _serviceProvider;
 
         public ProjectServiceProvider(IInstanceCounter instanceCounter)
         {
