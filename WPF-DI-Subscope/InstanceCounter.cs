@@ -2,6 +2,11 @@
 {
     public class InstanceCounter : IInstanceCounter
     {
-        public int Project { get; }
+        private int _project;
+
+        public int AddProject()
+        {
+            return ++_project;
+        }
     }
 }

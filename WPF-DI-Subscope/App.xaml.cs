@@ -16,7 +16,7 @@ namespace WPF_DI_Subscope
     /// </summary>
     public partial class App : Application
     {
-        IHost _host;
+        readonly IHost _host;
 
         public App()
         {

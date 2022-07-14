@@ -2,6 +2,6 @@
 {
     public interface IInstanceCounter
     {
-        int Project { get; }
+        int AddProject();
     }
 }

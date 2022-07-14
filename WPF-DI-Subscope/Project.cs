@@ -4,6 +4,11 @@ namespace WPF_DI_Subscope
 {
     public class Project : IProject
     {
-        public Guid Guid { get; } = Guid.NewGuid();
+        public int ProjectCount { get; }
+
+        public Project(IInstanceCounter instanceCounter)
+        {
+            ProjectCount = instanceCounter.AddProject();
+        }
     }
 }

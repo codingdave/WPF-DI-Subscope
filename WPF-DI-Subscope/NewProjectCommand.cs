@@ -5,7 +5,7 @@ namespace WPF_DI_Subscope
     public class NewProjectCommand : CommandBase
     {
         private readonly MainWindowViewModel _mainWindowViewModel;
-        private IProjectFactory _projectFactory;
+        private readonly IProjectFactory _projectFactory;
 
         public NewProjectCommand(MainWindowViewModel mainWindowViewModel, IProjectFactory projectFactory)
         {
