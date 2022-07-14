@@ -2,16 +2,25 @@
 {
     public class InstanceCounter : IInstanceCounter
     {
-        public InstanceCounter()
-        {
+        private int _counter = 0;
 
+        public string Value { get; private set; } = "None";
+
+        private bool _isDisposed;
+
+        public void Dispose()
+        {
+            _isDisposed = true;
+            Value = "Disposed";
         }
-        
-        public int Count { get; private set; }
 
         public void Increment()
         {
-            Count++;
+            if (!_isDisposed)
+            {
+                _counter++;
+                Value = _counter.ToString(); ;
+            }
         }
     }
 }

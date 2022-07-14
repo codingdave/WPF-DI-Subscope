@@ -1,8 +1,10 @@
-﻿namespace WPF_DI_Subscope.Services
+﻿using System;
+
+namespace WPF_DI_Subscope.Services
 {
-    public interface IInstanceCounter
+    public interface IInstanceCounter: IDisposable
     {
         void Increment();
-        int Count { get; }
+        string Value { get; }
     }
 }

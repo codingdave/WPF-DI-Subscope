@@ -4,7 +4,7 @@ namespace WPF_DI_Subscope
 {
     public interface ISubproject : IDisposable
     {
-        int Count { get; }
+        string Instance { get; }
 
         void Increment();
     }

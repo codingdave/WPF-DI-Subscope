@@ -4,7 +4,7 @@ namespace WPF_DI_Subscope.Services.Resource
 {
     public interface IResource : IDisposable
     {
-        int Count { get; }
+        string Instance { get; }
 
         void Increment();
     }

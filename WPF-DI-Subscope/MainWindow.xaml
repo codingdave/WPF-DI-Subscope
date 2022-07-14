@@ -17,9 +17,9 @@
         <TextBlock Grid.Row="0" Grid.Column="1" Padding="10" Text="{Binding SubprojectId, StringFormat=ObjectId for current Subproject: {0}}" />
         <TextBlock Grid.Row="0" Grid.Column="2" Padding="10" Text="{Binding ResourceId, StringFormat=ObjectId for current Resource: {0}}" />
 
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Project.Count, StringFormat=Project: {0}}" Padding="10" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Subproject.Count, StringFormat=Subproject: {0}}" Padding="10" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding Resource.Count, StringFormat=Resource: {0}}" Padding="10" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Project.Instance, StringFormat=Project: {0}}" Padding="10" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Subproject.Instance, StringFormat=Subproject: {0}}" Padding="10" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding Resource.Instance, StringFormat=Resource: {0}}" Padding="10" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
         <Button Grid.Row="2" Grid.Column="0" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding NewProjectCommand}" Content="New Project" Padding="5" />
         <Button Grid.Row="2" Grid.Column="1" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding NewSubprojectCommand}" Content="New Subproject" Padding="5" />
