@@ -9,5 +9,8 @@ namespace WPF_DI_Subscope
         void CreateNewResource();
 
         (IProject, ISubproject, IResource) GetProjectProvider();
+        void IncrementSubprojectCounter();
+        void IncrementResourceCounter();
+        void IncrementProjectCounter();
     }
 }

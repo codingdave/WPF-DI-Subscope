@@ -9,10 +9,10 @@ namespace WPF_DI_Subscope.Services
     {
         readonly IServiceProvider _serviceProvider;
 
-        public ProjectServiceProvider(IInstanceCounter instanceCounter)
+        public ProjectServiceProvider()
         {
             _serviceProvider = new ServiceCollection()
-                .AddSingleton(serviceProvider => instanceCounter)
+                .AddTransient<IInstanceCounter, InstanceCounter>()
 
                 .AddScoped<IResourceServiceProvider, ResourceServiceProvider>()
                 .AddScoped<ISubprojectServiceProvider, SubprojectServiceProvider>()

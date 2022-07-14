@@ -4,5 +4,7 @@
     public interface ISubproject
     {
         int Count { get; }
+
+        void Increment();
     }
 }

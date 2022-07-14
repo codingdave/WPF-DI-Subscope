@@ -2,6 +2,7 @@
 {
     public interface IInstanceCounter
     {
-        int AddProject();
+        void Increment();
+        int Count { get; }
     }
 }

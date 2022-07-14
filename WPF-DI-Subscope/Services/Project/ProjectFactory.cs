@@ -8,26 +8,20 @@ namespace WPF_DI_Subscope.Services
 {
     internal class ProjectFactory : IProjectFactory
     {
-        private readonly IProjectServiceProvider _projectServiceProvider;
+        private IServiceProvider _projectServiceProvider;
         private IServiceProvider _subprojectServiceProvider;
         private IServiceProvider _resourceServiceProvider;
-
-
-        private IServiceScope _projectScope;
 
         public ProjectFactory(IProjectServiceProvider projectServiceProvider)
         {
             _projectServiceProvider = projectServiceProvider;
             _subprojectServiceProvider = _projectServiceProvider.GetRequiredService<ISubprojectServiceProvider>();
             _resourceServiceProvider = _projectServiceProvider.GetRequiredService<IResourceServiceProvider>();
-            CreateNewProject();
-            CreateNewSubproject();
-            CreateNewResource();
         }
 
         public void CreateNewProject()
         {
-            _projectScope = _projectServiceProvider.CreateScope();
+            _projectServiceProvider = _projectServiceProvider.CreateScope().ServiceProvider;
             CreateNewSubproject();
             CreateNewResource();
         }
@@ -45,12 +39,26 @@ namespace WPF_DI_Subscope.Services
 
         public (IProject, ISubproject, IResource) GetProjectProvider()
         {
-            return (
-                _projectScope.ServiceProvider.GetRequiredService<IProject>(),
-                _subprojectServiceProvider.GetRequiredService<ISubproject>(),
-                _resourceServiceProvider.GetRequiredService<IResource>()
-                );
+            return (Project, Subproject, Resource);
+        }
+
+        IProject Project => _projectServiceProvider.GetRequiredService<IProject>();
+        ISubproject Subproject => _subprojectServiceProvider.GetRequiredService<ISubproject>();
+        IResource Resource => _resourceServiceProvider.GetRequiredService<IResource>();
+
+        public void IncrementSubprojectCounter()
+        {
+            Subproject.Increment();
+        }
+
+        public void IncrementResourceCounter()
+        {
+            Resource.Increment();
+        }
+
+        public void IncrementProjectCounter()
+        {
+            Project.Increment();
         }
     }
-
 }

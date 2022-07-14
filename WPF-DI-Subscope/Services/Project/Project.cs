@@ -4,11 +4,18 @@ namespace WPF_DI_Subscope.Services
 {
     public class Project : IProject
     {
-        public int Count { get; }
+        private IInstanceCounter _instanceCounter;
+
+        public int Count => _instanceCounter.Count;
 
         public Project(IInstanceCounter instanceCounter)
         {
-            Count = instanceCounter.AddProject();
+            _instanceCounter = instanceCounter;
+        }
+
+        public void Increment()
+        {
+            _instanceCounter.Increment();
         }
     }
 }

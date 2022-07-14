@@ -1,64 +1,31 @@
-﻿<Window x:Class="WPF_DI_Subscope.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPF_DI_Subscope" 
-        mc:Ignorable="d"
-        d:DataContext="{d:DesignInstance Type=local:MainWindowViewModel}"
-        Title="MainWindow" Height="450" Width="800">
+﻿<Window x:Class="WPF_DI_Subscope.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:WPF_DI_Subscope" mc:Ignorable="d" d:DataContext="{d:DesignInstance Type=local:MainWindowViewModel}" Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" 
-                   Padding="10"
-                   Text="{Binding ProjectId, StringFormat=ProjectId# {0}}" />
+        <TextBlock Grid.Row="0" Grid.Column="0" Padding="10" Text="{Binding ProjectId, StringFormat=ObjectId for current Project: {0}}" />
+        <TextBlock Grid.Row="0" Grid.Column="1" Padding="10" Text="{Binding SubprojectId, StringFormat=ObjectId for current Subproject: {0}}" />
+        <TextBlock Grid.Row="0" Grid.Column="2" Padding="10" Text="{Binding ResourceId, StringFormat=ObjectId for current Resource: {0}}" />
 
-        <TextBlock Grid.Row="0" Grid.Column="1" 
-                   Padding="10"
-                   Text="{Binding SubprojectId, StringFormat=SubprojectId# {0}}" />
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Project.Count, StringFormat=Project: {0}}" Padding="10" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Subproject.Count, StringFormat=Subproject: {0}}" Padding="10" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding Resource.Count, StringFormat=Resource: {0}}" Padding="10" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" />
 
-        <TextBlock Grid.Row="0" Grid.Column="2" 
-                   Padding="10"
-                   Text="{Binding ResourceId, StringFormat=ResourceId# {0}}" />
+        <Button Grid.Row="2" Grid.Column="0" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding NewProjectCommand}" Content="New Project" Padding="5" />
+        <Button Grid.Row="2" Grid.Column="1" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding NewSubprojectCommand}" Content="New Subproject" Padding="5" />
+        <Button Grid.Row="2" Grid.Column="2" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding NewResourceCommand}" Content="New Resource" Padding="5" />
 
-        <TextBlock Grid.Row="1" Grid.Column="0"
-                   Text="{Binding Project.Count, StringFormat=Project: {0}}" 
-                   Padding="10"
-                   FontSize="24" 
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
-
-        <TextBlock Grid.Row="1" Grid.Column="1"
-                   Text="{Binding Subproject.Count, StringFormat=Subproject: {0}}" 
-                   Padding="10"
-                   FontSize="24" 
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
-
-        <TextBlock Grid.Row="1" Grid.Column="2"
-                   Text="{Binding Resource.Count, StringFormat=Resource: {0}}"
-                   Padding="10"
-                   FontSize="24" 
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
-
-        <Button Grid.Row="2" Grid.Column="0" Margin="5,10,5,10" HorizontalAlignment="Right" 
-                Command="{Binding NewProjectCommand}" Content="New Project" Padding="5"/>
-
-        <Button Grid.Row="2" Grid.Column="1" Margin="5,10,5,10" HorizontalAlignment="Right" 
-                Command="{Binding NewSubprojectCommand}" Content="New Subproject" Padding="5"/>
-
-        <Button Grid.Row="2" Grid.Column="2" Margin="5,10,5,10" HorizontalAlignment="Right" 
-                Command="{Binding NewResourceCommand}" Content="New Resource" Padding="5"/>
+        <Button Grid.Row="3" Grid.Column="0" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding IncrementProjectCounterCommand}" Content="Increment Project" Padding="5" />
+        <Button Grid.Row="3" Grid.Column="1" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding IncrementSubprojectCounterCommand}" Content="Increment Subproject" Padding="5" />
+        <Button Grid.Row="3" Grid.Column="2" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding IncrementResourceCounterCommand}" Content="Increment Resource" Padding="5" />
     </Grid>
 </Window>

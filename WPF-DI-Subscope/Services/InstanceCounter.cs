@@ -2,11 +2,16 @@
 {
     public class InstanceCounter : IInstanceCounter
     {
-        private int _project;
-
-        public int AddProject()
+        public InstanceCounter()
         {
-            return ++_project;
+
+        }
+        
+        public int Count { get; private set; }
+
+        public void Increment()
+        {
+            Count++;
         }
     }
 }

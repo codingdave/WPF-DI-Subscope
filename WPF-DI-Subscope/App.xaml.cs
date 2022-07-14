@@ -17,7 +17,6 @@ namespace WPF_DI_Subscope
         {
             _host = Host.CreateDefaultBuilder().
                 ConfigureServices(services => services
-                .AddScoped<IInstanceCounter, InstanceCounter>()
 
                 .AddSingleton<IProjectServiceProvider, ProjectServiceProvider>()
                 .AddSingleton<IProjectFactory, ProjectFactory>()

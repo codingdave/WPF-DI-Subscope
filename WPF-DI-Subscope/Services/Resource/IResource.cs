@@ -3,5 +3,7 @@
     public interface IResource
     {
         int Count { get; }
+
+        void Increment();
     }
 }

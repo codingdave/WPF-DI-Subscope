@@ -7,10 +7,10 @@ namespace WPF_DI_Subscope.Services.Resource
     {
         readonly IServiceProvider _serviceProvider;
 
-        public ResourceServiceProvider(IInstanceCounter instanceCounter)
+        public ResourceServiceProvider()
         {
             _serviceProvider = new ServiceCollection()
-                .AddSingleton(instanceCounter)
+                .AddTransient<IInstanceCounter, InstanceCounter>()
 
                 .AddScoped<IResource, Resource>()
 
