@@ -8,6 +8,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using WPF_DI_Subscope.Services;
+using WPF_DI_Subscope.Services.SubProject;
 
 namespace WPF_DI_Subscope
 {
@@ -21,12 +23,14 @@ namespace WPF_DI_Subscope
         public App()
         {
             _host = Host.CreateDefaultBuilder().
-                ConfigureServices(services =>
-                services
+                ConfigureServices(services => services
                 .AddSingleton<IInstanceCounter, InstanceCounter>()
 
                 .AddSingleton<IProjectServiceProvider, ProjectServiceProvider>()
                 .AddSingleton<IProjectFactory, ProjectFactory>()
+
+                .AddSingleton<ISubprojectServiceProvider, SubprojectServiceProvider>()
+                .AddSingleton<ISubprojectFactory, SubprojectFactory>()
 
                 .AddSingleton<MainWindowViewModel>()
                 .AddSingleton<MainWindow>(services =>

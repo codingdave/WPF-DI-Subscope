@@ -1,17 +1,16 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using System;
 
-namespace WPF_DI_Subscope
+namespace WPF_DI_Subscope.Services.SubProject
 {
-    internal class ProjectServiceProvider : IProjectServiceProvider
+    internal class SubprojectServiceProvider : ISubprojectServiceProvider
     {
         readonly IServiceProvider _serviceProvider;
 
-        public ProjectServiceProvider(IInstanceCounter instanceCounter)
+        public SubprojectServiceProvider(IInstanceCounter instanceCounter)
         {
             _serviceProvider = new ServiceCollection()
-                .AddScoped<IProject, Project>()
+                .AddScoped<ISubproject, Subproject>()
                 .AddScoped(serviceProvider => instanceCounter)
                 .BuildServiceProvider();
         }

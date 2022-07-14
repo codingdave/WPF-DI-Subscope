@@ -1,4 +1,4 @@
-﻿namespace WPF_DI_Subscope
+﻿namespace WPF_DI_Subscope.Services
 {
     public class InstanceCounter : IInstanceCounter
     {

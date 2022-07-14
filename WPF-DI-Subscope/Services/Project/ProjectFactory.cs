@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace WPF_DI_Subscope
+namespace WPF_DI_Subscope.Services
 {
     internal class ProjectFactory : IProjectFactory
     {
