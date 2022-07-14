@@ -5,6 +5,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -24,8 +25,12 @@
         <Button Grid.Row="2" Grid.Column="1" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding NewSubprojectCommand}" Content="New Subproject" Padding="5" />
         <Button Grid.Row="2" Grid.Column="2" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding NewResourceCommand}" Content="New Resource" Padding="5" />
 
-        <Button Grid.Row="3" Grid.Column="0" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding IncrementProjectCounterCommand}" Content="Increment Project" Padding="5" />
-        <Button Grid.Row="3" Grid.Column="1" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding IncrementSubprojectCounterCommand}" Content="Increment Subproject" Padding="5" />
-        <Button Grid.Row="3" Grid.Column="2" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding IncrementResourceCounterCommand}" Content="Increment Resource" Padding="5" />
+        <Button Grid.Row="3" Grid.Column="0" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding IncrementProjectCommand}" Content="Increment Project" Padding="5" />
+        <Button Grid.Row="3" Grid.Column="1" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding IncrementSubprojectCommand}" Content="Increment Subproject" Padding="5" />
+        <Button Grid.Row="3" Grid.Column="2" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding IncrementResourceCommand}" Content="Increment Resource" Padding="5" />
+
+        <Button Grid.Row="4" Grid.Column="0" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding DisposeProjectCommand}" Content="Dispose Project" Padding="5" />
+        <Button Grid.Row="4" Grid.Column="1" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding DisposeSubprojectCommand}" Content="Dispose Subproject" Padding="5" />
+        <Button Grid.Row="4" Grid.Column="2" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding DisposeResourceCommand}" Content="Dispose Resource" Padding="5" />
     </Grid>
 </Window>

@@ -1,7 +1,8 @@
-﻿namespace WPF_DI_Subscope
-{
+﻿using System;
 
-    public interface ISubproject
+namespace WPF_DI_Subscope
+{
+    public interface ISubproject : IDisposable
     {
         int Count { get; }
 

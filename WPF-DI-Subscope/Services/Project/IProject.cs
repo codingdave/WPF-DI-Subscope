@@ -2,7 +2,7 @@
 
 namespace WPF_DI_Subscope
 {
-    public interface IProject
+    public interface IProject : IDisposable
     {
         int Count { get; }
 

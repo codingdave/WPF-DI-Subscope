@@ -16,7 +16,6 @@ namespace WPF_DI_Subscope.Services
 
                 .AddScoped<IResourceServiceProvider, ResourceServiceProvider>()
                 .AddScoped<ISubprojectServiceProvider, SubprojectServiceProvider>()
-
                 .AddScoped<IProject, Project>()
 
                 .BuildServiceProvider();

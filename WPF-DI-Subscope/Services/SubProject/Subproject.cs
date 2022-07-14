@@ -4,9 +4,9 @@ namespace WPF_DI_Subscope
 {
     public class Subproject : ISubproject
     {
-        private IInstanceCounter _instanceCounter;
+        private IInstanceCounter? _instanceCounter;
 
-        public int Count => _instanceCounter.Count;
+        public int Count => _instanceCounter!.Count;
 
         public Subproject(IInstanceCounter instanceCounter)
         {
@@ -15,7 +15,12 @@ namespace WPF_DI_Subscope
 
         public void Increment()
         {
-            _instanceCounter.Increment();
+            _instanceCounter!.Increment();
+        }
+
+        public void Dispose()
+        {
+            _instanceCounter = null;
         }
     }
 }
