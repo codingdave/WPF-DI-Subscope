@@ -10,8 +10,11 @@
 
         public void Dispose()
         {
-            _isDisposed = true;
-            Value = "Disposed";
+            if (!_isDisposed)
+            {
+                _isDisposed = true;
+                Value = "Disposed";
+            }
         }
 
         public void Increment()
@@ -20,6 +23,10 @@
             {
                 _counter++;
                 Value = _counter.ToString(); ;
+            }
+            else
+            {
+                Value = "ERROR: Object is disposed";
             }
         }
     }

@@ -19,7 +19,7 @@ namespace WPF_DI_Subscope
                 ConfigureServices(services => services
 
                 .AddSingleton<IProjectServiceProvider, ProjectServiceProvider>()
-                .AddSingleton<IProjectFactory, ProjectFactory>()
+                .AddSingleton<IProjectProvider, ProjectProvider>()
 
                 .AddSingleton<MainWindowViewModel>()
                 .AddSingleton<MainWindow>(services =>

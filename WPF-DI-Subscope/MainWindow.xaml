@@ -1,4 +1,4 @@
-﻿<Window x:Class="WPF_DI_Subscope.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:WPF_DI_Subscope" mc:Ignorable="d" d:DataContext="{d:DesignInstance Type=local:MainWindowViewModel}" Title="MainWindow" Height="550" Width="600">
+﻿<Window x:Class="WPF_DI_Subscope.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:WPF_DI_Subscope" mc:Ignorable="d" d:DataContext="{d:DesignInstance Type=local:MainWindowViewModel}" Title="MainWindow" Height="650" Width="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -12,10 +12,14 @@
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-
-        <TextBlock Grid.Row="0" Grid.Column="0" Padding="10" Text="{Binding ProjectId, StringFormat=ObjectId for current Project: {0}}" d:Text="ObjectId for current Project: 1" />
-        <TextBlock Grid.Row="0" Grid.Column="1" Padding="10" Text="{Binding SubprojectId, StringFormat=ObjectId for current Subproject: {0}}" d:Text="ObjectId for current Subproject: 1" />
-        <TextBlock Grid.Row="0" Grid.Column="2" Padding="10" Text="{Binding ResourceId, StringFormat=ObjectId for current Resource: {0}}" d:Text="ObjectId for current Resource: 1" />
+        
+        <GroupBox Header="Object IDs" FontSize="20" Padding="10" Background="#11111111">
+            <StackPanel>
+                <TextBlock FontSize="14" Text="{Binding ProjectId, StringFormat=Project: {0}}" d:Text="Project: 1" />
+                <TextBlock FontSize="14" Text="{Binding SubprojectId, StringFormat=Subproject: {0}}" d:Text="Subproject: 1" />
+                <TextBlock FontSize="14" Text="{Binding ResourceId, StringFormat=Resource: {0}}" d:Text="Resource: 1" />
+            </StackPanel>
+        </GroupBox>
 
         <GroupBox Header="Project" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="10" Padding="10" FontSize="24" Background="#11111111">
             <StackPanel Orientation="Vertical">

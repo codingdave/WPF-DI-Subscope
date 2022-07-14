@@ -6,13 +6,13 @@ using WPF_DI_Subscope.Services.SubProject;
 
 namespace WPF_DI_Subscope.Services
 {
-    internal class ProjectFactory : IProjectFactory
+    internal class ProjectProvider : IProjectProvider
     {
         private IServiceProvider _projectServiceProvider;
         private IServiceProvider _subprojectServiceProvider;
         private IServiceProvider _resourceServiceProvider;
 
-        public ProjectFactory(IProjectServiceProvider projectServiceProvider)
+        public ProjectProvider(IProjectServiceProvider projectServiceProvider)
         {
             _projectServiceProvider = projectServiceProvider;
             _subprojectServiceProvider = _projectServiceProvider.GetRequiredService<ISubprojectServiceProvider>();
@@ -59,6 +59,24 @@ namespace WPF_DI_Subscope.Services
         public void IncrementProjectCounter()
         {
             Project.Increment();
+        }
+
+        public void DisposeProject()
+        {
+            Project.Dispose();
+            Subproject.Dispose();
+            Resource.Dispose();
+        }
+
+        public void DisposeSubproject()
+        {
+            Subproject.Dispose();
+            Resource.Dispose();
+        }
+
+        public void DisposeResource()
+        {
+            Resource.Dispose();
         }
     }
 }
