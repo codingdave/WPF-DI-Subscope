@@ -23,8 +23,12 @@ namespace WPF_DI_Subscope
             _host = Host.CreateDefaultBuilder().
                 ConfigureServices(services =>
                 services
+                .AddSingleton<IInstanceCounter, InstanceCounter>()
+
                 .AddSingleton<IProjectServiceProvider, ProjectServiceProvider>()
                 .AddSingleton<IProjectFactory, ProjectFactory>()
+
+                .AddSingleton<MainWindowViewModel>()
                 .AddSingleton<MainWindow>(services =>
                 {
                     return new MainWindow()
@@ -32,7 +36,6 @@ namespace WPF_DI_Subscope
                         DataContext = services.GetRequiredService<MainWindowViewModel>()
                     };
                 })
-                .AddSingleton<MainWindowViewModel>()
                 ).Build();
         }
 

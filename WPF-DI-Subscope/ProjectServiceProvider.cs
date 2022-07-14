@@ -8,10 +8,11 @@ namespace WPF_DI_Subscope
     {
         IServiceProvider _serviceProvider;
 
-        public ProjectServiceProvider()
+        public ProjectServiceProvider(IInstanceCounter instanceCounter)
         {
             _serviceProvider = new ServiceCollection()
                 .AddScoped<IProject, Project>()
+                .AddScoped(serviceProvider => instanceCounter)
                 .BuildServiceProvider();
         }
 
