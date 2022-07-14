@@ -1,15 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 using WPF_DI_Subscope.Services;
-using WPF_DI_Subscope.Services.SubProject;
 
 namespace WPF_DI_Subscope
 {
@@ -28,9 +21,6 @@ namespace WPF_DI_Subscope
 
                 .AddSingleton<IProjectServiceProvider, ProjectServiceProvider>()
                 .AddSingleton<IProjectFactory, ProjectFactory>()
-
-                .AddSingleton<ISubprojectServiceProvider, SubprojectServiceProvider>()
-                .AddSingleton<ISubprojectFactory, SubprojectFactory>()
 
                 .AddSingleton<MainWindowViewModel>()
                 .AddSingleton<MainWindow>(services =>

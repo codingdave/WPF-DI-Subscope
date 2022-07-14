@@ -3,5 +3,6 @@
 
     public interface ISubproject
     {
+        int Count { get; }
     }
 }

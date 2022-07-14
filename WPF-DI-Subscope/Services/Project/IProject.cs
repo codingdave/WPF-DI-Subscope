@@ -4,6 +4,6 @@ namespace WPF_DI_Subscope
 {
     public interface IProject
     {
-        int ProjectCount { get; }
+        int Count { get; }
     }
 }

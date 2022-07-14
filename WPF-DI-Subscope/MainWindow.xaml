@@ -20,16 +20,34 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.Row="0" Grid.Column="0" 
-               Text="{Binding ProjectId, StringFormat=ProjectId# {0}}" />
+                   Padding="10"
+                   Text="{Binding ProjectId, StringFormat=ProjectId# {0}}" />
 
         <TextBlock Grid.Row="0" Grid.Column="1" 
-               Text="{Binding SubprojectId, StringFormat=SubprojectId# {0}}" />
+                   Padding="10"
+                   Text="{Binding SubprojectId, StringFormat=SubprojectId# {0}}" />
 
         <TextBlock Grid.Row="0" Grid.Column="2" 
-               Text="{Binding ResourceId, StringFormat=ResourceId# {0}}" />
+                   Padding="10"
+                   Text="{Binding ResourceId, StringFormat=ResourceId# {0}}" />
 
-        <TextBlock Grid.Row="1" 
-                   Text="{Binding Project.ProjectCount, StringFormat=Project: {0}}" 
+        <TextBlock Grid.Row="1" Grid.Column="0"
+                   Text="{Binding Project.Count, StringFormat=Project: {0}}" 
+                   Padding="10"
+                   FontSize="24" 
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="1"
+                   Text="{Binding Subproject.Count, StringFormat=Subproject: {0}}" 
+                   Padding="10"
+                   FontSize="24" 
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="2"
+                   Text="{Binding Resource.Value, StringFormat=Resource: {0}}"
+                   Padding="10"
                    FontSize="24" 
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"/>

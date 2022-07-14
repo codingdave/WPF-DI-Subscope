@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using System;
+using WPF_DI_Subscope.Services.Resource;
+using WPF_DI_Subscope.Services.SubProject;
 
 namespace WPF_DI_Subscope.Services
 {
@@ -11,8 +12,13 @@ namespace WPF_DI_Subscope.Services
         public ProjectServiceProvider(IInstanceCounter instanceCounter)
         {
             _serviceProvider = new ServiceCollection()
+                .AddSingleton(serviceProvider => instanceCounter)
+
+                .AddScoped<IResourceServiceProvider, ResourceServiceProvider>()
+                .AddScoped<ISubprojectServiceProvider, SubprojectServiceProvider>()
+
                 .AddScoped<IProject, Project>()
-                .AddScoped(serviceProvider => instanceCounter)
+
                 .BuildServiceProvider();
         }
 

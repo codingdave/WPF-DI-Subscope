@@ -4,11 +4,11 @@ namespace WPF_DI_Subscope
 {
     public class Subproject : ISubproject
     {
-        public int ProjectCount { get; }
+        public int Count { get; }
 
         public Subproject(IInstanceCounter instanceCounter)
         {
-            ProjectCount = instanceCounter.AddProject();
+            Count = instanceCounter.AddProject();
         }
     }
 }

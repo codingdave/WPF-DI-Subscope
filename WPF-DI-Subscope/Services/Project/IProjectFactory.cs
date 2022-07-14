@@ -1,7 +1,13 @@
-﻿namespace WPF_DI_Subscope
+﻿using WPF_DI_Subscope.Services.Resource;
+
+namespace WPF_DI_Subscope
 {
     public interface IProjectFactory
     {
-        IProject CreateNewProject();
+        void CreateNewProject();
+        void CreateNewSubproject();
+        void CreateNewResource();
+
+        (IProject, ISubproject, IResource) GetProjectProvider();
     }
 }
