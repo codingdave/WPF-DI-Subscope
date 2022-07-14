@@ -4,11 +4,11 @@ namespace WPF_DI_Subscope.Services.Resource
 {
     public class Resource : IResource
     {
-        public Resource()
+        public Resource(IInstanceCounter instanceCounter)
         {
-            Value = DateTime.Now.ToString();
+            Count = instanceCounter.AddProject();
         }
-        
-        public string Value { get; set; }
+
+        public int Count { get; set; }
     }
 }

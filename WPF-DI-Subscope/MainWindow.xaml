@@ -46,7 +46,7 @@
                    VerticalAlignment="Center"/>
 
         <TextBlock Grid.Row="1" Grid.Column="2"
-                   Text="{Binding Resource.Value, StringFormat=Resource: {0}}"
+                   Text="{Binding Resource.Count, StringFormat=Resource: {0}}"
                    Padding="10"
                    FontSize="24" 
                    HorizontalAlignment="Center"

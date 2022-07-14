@@ -2,6 +2,6 @@
 {
     public interface IResource
     {
-        string Value { get; }
+        int Count { get; }
     }
 }
