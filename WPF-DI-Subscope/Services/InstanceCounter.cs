@@ -4,7 +4,7 @@
     {
         private int _counter = 0;
 
-        public string Value { get; private set; } = "None";
+        public string Value { get; private set; } = "0";
 
         private bool _isDisposed;
 
