@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace WPF_DI_Subscope.Services.Resource
+namespace WPF_DI_Subscope.Services
 {
     public class ResourceServiceProvider : IResourceServiceProvider
     {
-        readonly IServiceProvider _serviceProvider;
+        private readonly IServiceProvider _serviceProvider;
 
         public ResourceServiceProvider()
         {
@@ -17,10 +17,13 @@ namespace WPF_DI_Subscope.Services.Resource
                 .BuildServiceProvider();
         }
 
+        public void Dispose()
+        {
+        }
+
         public object? GetService(Type serviceType)
         {
             return _serviceProvider.GetService(serviceType);
         }
     }
-
 }

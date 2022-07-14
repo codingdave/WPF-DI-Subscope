@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace WPF_DI_Subscope.Services.SubProject
+namespace WPF_DI_Subscope.Services
 {
-    public interface ISubprojectServiceProvider : IServiceProvider
+    public interface ISubprojectServiceProvider : IServiceProvider, IDisposable
     {
     }
 }

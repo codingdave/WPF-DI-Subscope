@@ -1,21 +1,7 @@
-﻿using WPF_DI_Subscope.Services.Resource;
-
-namespace WPF_DI_Subscope
+﻿namespace WPF_DI_Subscope.Services
 {
-    public interface IProjectProvider
+    public interface IProjectProvider : IProvider
     {
-        void CreateNewProject();
-        void CreateNewSubproject();
-        void CreateNewResource();
-
-        (IProject project, ISubproject subproject, IResource resource) GetProjectProvider();
-
-        void DisposeProject();
-        void DisposeSubproject();
-        void DisposeResource();
-
-        void IncrementSubprojectCounter();
-        void IncrementResourceCounter();
-        void IncrementProjectCounter();
+        IProject Project { get; }
     }
 }

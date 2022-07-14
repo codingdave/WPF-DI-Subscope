@@ -4,30 +4,34 @@
     {
         private int _counter = 0;
 
-        public string Value { get; private set; } = "0";
-
+        public string Value
+        {
+            get => _value;
+            private set
+            {
+                if (!_isDisposed)
+                {
+                    _value = value;
+                }
+                else
+                {
+                    _value = "ERROR: Object is disposed";
+                }
+            }
+        }
         private bool _isDisposed;
+        private string _value = "0";
 
         public void Dispose()
         {
-            if (!_isDisposed)
-            {
-                _isDisposed = true;
-                Value = "Disposed";
-            }
+            Value = "Disposed";
+            _isDisposed = true;
         }
 
         public void Increment()
         {
-            if (!_isDisposed)
-            {
-                _counter++;
-                Value = _counter.ToString(); ;
-            }
-            else
-            {
-                Value = "ERROR: Object is disposed";
-            }
+            _counter++;
+            Value = _counter.ToString();
         }
     }
 }

@@ -1,8 +1,8 @@
-﻿<Window x:Class="WPF_DI_Subscope.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:WPF_DI_Subscope" mc:Ignorable="d" d:DataContext="{d:DesignInstance Type=local:MainWindowViewModel}" Title="MainWindow" Height="650" Width="500">
+﻿<Window x:Class="WPF_DI_Subscope.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:WPF_DI_Subscope" mc:Ignorable="d" d:DataContext="{d:DesignInstance Type=local:MainWindowViewModel}" Title="NcEditor" Height="Auto" Width="Auto">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -21,15 +21,15 @@
             </StackPanel>
         </GroupBox>
 
-        <GroupBox Header="Project" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="10" Padding="10" FontSize="24" Background="#11111111">
+        <GroupBox Header="Project (File opened)" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="10" Padding="10" FontSize="24" Background="#11111111">
             <StackPanel Orientation="Vertical">
-                <TextBlock Text="{Binding Project.Instance, StringFormat=Count: {0}}" d:Text="Count: 0" Padding="10" FontSize="16"/>
-                <GroupBox Header="SubProject" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="10" Padding="10" FontSize="24" Background="#11111111">
+                <TextBlock Text="{Binding Project.Data, StringFormat=Count: {0}}" d:Text="Count: 0" Padding="10" FontSize="16"/>
+                <GroupBox Header="Subproject (dependent file opened)" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="10" Padding="10" FontSize="24" Background="#11111111">
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Text="{Binding Subproject.Instance, StringFormat=Count: {0}}" d:Text="Count: 0" Padding="10" FontSize="16" />
+                        <TextBlock Text="{Binding Subproject.Data, StringFormat=Count: {0}}" d:Text="Count: 0" Padding="10" FontSize="16" />
                         <GroupBox Header="Resource" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="10" Padding="10" FontSize="24" Background="#11111111">
                             <StackPanel Orientation="Vertical">
-                                <TextBlock Text="{Binding Resource.Instance, StringFormat=Count: {0}}" d:Text="Count: 0" Padding="10" FontSize="16" />
+                                <TextBlock Text="{Binding Resource.Data, StringFormat=Count: {0}}" d:Text="Count: 0" Padding="10" FontSize="16" />
                             </StackPanel>
                         </GroupBox>
                     </StackPanel>

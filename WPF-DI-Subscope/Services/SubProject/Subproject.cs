@@ -1,15 +1,20 @@
-﻿using WPF_DI_Subscope.Services;
-
-namespace WPF_DI_Subscope
+﻿namespace WPF_DI_Subscope.Services
 {
     public class Subproject : ISubproject
     {
         private IInstanceCounter _instanceCounter;
 
-        public string Instance => _instanceCounter.Value;
+        public string Data => _instanceCounter.Value;
 
-        public Subproject(IInstanceCounter instanceCounter)
+        public IResource Resource => _resourceProvider.Resource;
+
+        private IResourceProvider _resourceProvider;
+
+        public Subproject(
+            IResourceProvider resourceProvider,
+            IInstanceCounter instanceCounter)
         {
+            _resourceProvider = resourceProvider;
             _instanceCounter = instanceCounter;
         }
 
@@ -21,6 +26,12 @@ namespace WPF_DI_Subscope
         public void Dispose()
         {
             _instanceCounter.Dispose();
+            Resource.Dispose();
+        }
+
+        public void CreateNewResource()
+        {
+            _resourceProvider.CreateScope();
         }
     }
 }

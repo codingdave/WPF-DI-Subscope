@@ -1,10 +1,8 @@
 ﻿using System;
 
-namespace WPF_DI_Subscope.Services.Resource
+namespace WPF_DI_Subscope.Services
 {
-    public interface IResourceServiceProvider : IServiceProvider
-
+    public interface IResourceServiceProvider : IServiceProvider, IDisposable
     {
-
     }
 }

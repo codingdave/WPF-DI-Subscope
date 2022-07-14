@@ -20,9 +20,10 @@ namespace WPF_DI_Subscope
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(MainWindowViewModel mainWindowViewModel)
         {
             InitializeComponent();
+            DataContext = mainWindowViewModel;
         }
     }
 }

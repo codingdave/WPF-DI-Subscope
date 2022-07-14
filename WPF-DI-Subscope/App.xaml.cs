@@ -16,19 +16,13 @@ namespace WPF_DI_Subscope
         public App()
         {
             _host = Host.CreateDefaultBuilder().
-                ConfigureServices(services => services
+                ConfigureServices(services =>
+                services
+                    .AddSingleton<IProjectServiceProvider, ProjectServiceProvider>()
+                    .AddSingleton<IProjectProvider, ProjectProvider>()
 
-                .AddSingleton<IProjectServiceProvider, ProjectServiceProvider>()
-                .AddSingleton<IProjectProvider, ProjectProvider>()
-
-                .AddSingleton<MainWindowViewModel>()
-                .AddSingleton<MainWindow>(services =>
-                {
-                    return new MainWindow()
-                    {
-                        DataContext = services.GetRequiredService<MainWindowViewModel>()
-                    };
-                })
+                    .AddSingleton<MainWindowViewModel>()
+                    .AddSingleton<MainWindow>()
                 ).Build();
         }
 

@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace WPF_DI_Subscope.Services.SubProject
+namespace WPF_DI_Subscope.Services
 {
-    internal class SubprojectServiceProvider : ISubprojectServiceProvider
+    public class SubprojectServiceProvider : ISubprojectServiceProvider
     {
-        readonly IServiceProvider _serviceProvider;
+        private readonly IServiceProvider _serviceProvider;
 
         public SubprojectServiceProvider()
         {
@@ -13,7 +13,15 @@ namespace WPF_DI_Subscope.Services.SubProject
                 .AddTransient<IInstanceCounter, InstanceCounter>()
 
                 .AddScoped<ISubproject, Subproject>()
+
+                .AddScoped<IResourceServiceProvider, ResourceServiceProvider>()
+                .AddScoped<IResourceProvider, ResourceProvider>()
+
                 .BuildServiceProvider();
+        }
+
+        public void Dispose()
+        {
         }
 
         public object? GetService(Type serviceType)

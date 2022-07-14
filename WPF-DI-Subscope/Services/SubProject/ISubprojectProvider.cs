@@ -1,9 +1,7 @@
 ﻿namespace WPF_DI_Subscope.Services
 {
-    public interface IProject : IContent
+    public interface ISubprojectProvider : IProvider
     {
         ISubproject Subproject { get; }
-
-        void CreateNewSubproject();
     }
 }

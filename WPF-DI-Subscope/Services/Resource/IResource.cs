@@ -1,11 +1,6 @@
-﻿using System;
-
-namespace WPF_DI_Subscope.Services.Resource
+﻿namespace WPF_DI_Subscope.Services
 {
-    public interface IResource : IDisposable
+    public interface IResource : IContent
     {
-        string Instance { get; }
-
-        void Increment();
     }
 }
