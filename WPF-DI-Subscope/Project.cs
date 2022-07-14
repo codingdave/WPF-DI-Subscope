@@ -1,6 +1,9 @@
 ﻿using System;
 
-public class Project : IProject
+namespace WPF_DI_Subscope
 {
-    public Guid Guid { get; } = Guid.NewGuid();
+    public class Project : IProject
+    {
+        public Guid Guid { get; } = Guid.NewGuid();
+    }
 }

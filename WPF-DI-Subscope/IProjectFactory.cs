@@ -1,4 +1,7 @@
-﻿public interface IProjectFactory
+﻿namespace WPF_DI_Subscope
 {
-    IProject CreateNewProject();
+    public interface IProjectFactory
+    {
+        IProject CreateNewProject();
+    }
 }

@@ -1,6 +1,9 @@
 ﻿using System;
 
-public interface IProject
+namespace WPF_DI_Subscope
 {
-    Guid Guid { get; }
+    public interface IProject
+    {
+        Guid Guid { get; }
+    }
 }

@@ -1,18 +1,21 @@
 ﻿using MVVMEssentials.Commands;
 
-public class NewProjectCommand : CommandBase
+namespace WPF_DI_Subscope
 {
-    private readonly MainWindowViewModel _mainWindowViewModel;
-    private IProjectFactory _projectFactory;
-
-    public NewProjectCommand(MainWindowViewModel mainWindowViewModel, IProjectFactory projectFactory)
+    public class NewProjectCommand : CommandBase
     {
-        _mainWindowViewModel = mainWindowViewModel;
-        _projectFactory = projectFactory;
-    }
+        private readonly MainWindowViewModel _mainWindowViewModel;
+        private IProjectFactory _projectFactory;
 
-    public override void Execute(object parameter)
-    {
-        _mainWindowViewModel.Project = _projectFactory.CreateNewProject();
+        public NewProjectCommand(MainWindowViewModel mainWindowViewModel, IProjectFactory projectFactory)
+        {
+            _mainWindowViewModel = mainWindowViewModel;
+            _projectFactory = projectFactory;
+        }
+
+        public override void Execute(object parameter)
+        {
+            _mainWindowViewModel.Project = _projectFactory.CreateNewProject();
+        }
     }
 }
