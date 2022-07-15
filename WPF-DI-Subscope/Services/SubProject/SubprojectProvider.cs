@@ -13,7 +13,7 @@ namespace WPF_DI_Subscope.Services
         public SubprojectProvider(ISubprojectServiceProvider subprojectServiceProvider)
         {
             _subprojectServiceProvider = subprojectServiceProvider;
-            CreateScope();
+            _scope = _subprojectServiceProvider.CreateScope();
         }
 
         public void CreateScope()

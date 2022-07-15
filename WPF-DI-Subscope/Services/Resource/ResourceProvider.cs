@@ -13,7 +13,7 @@ namespace WPF_DI_Subscope.Services
         public ResourceProvider(IResourceServiceProvider resourceServiceProvider)
         {
             _resourceServiceProvider = resourceServiceProvider;
-            CreateScope();
+            _scope = _resourceServiceProvider.CreateScope();
         }
 
         public void CreateScope()
