@@ -8,7 +8,7 @@ namespace WPF_DI_Subscope.Services
         private IServiceProvider _resourceServiceProvider;
         private IServiceScope _scope;
 
-        public IResource Resource => _scope.ServiceProvider.GetRequiredService<IResource>();
+        public IResourceScope Resource => _scope.ServiceProvider.GetRequiredService<IResourceScope>();
 
         public ResourceProvider(IResourceServiceProvider resourceServiceProvider)
         {

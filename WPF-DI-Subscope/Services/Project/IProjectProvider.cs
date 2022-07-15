@@ -2,6 +2,6 @@
 {
     public interface IProjectProvider : IProvider
     {
-        IProject Project { get; }
+        IProjectScope ProjectScope { get; }
     }
 }

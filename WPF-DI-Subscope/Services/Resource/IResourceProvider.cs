@@ -2,6 +2,6 @@
 {
     public interface IResourceProvider : IProvider
     {
-        IResource Resource { get; }
+        IResourceScope Resource { get; }
     }
 }

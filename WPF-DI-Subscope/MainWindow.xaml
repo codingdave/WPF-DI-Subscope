@@ -15,15 +15,15 @@
         
         <GroupBox Header="Object IDs" FontSize="20" Padding="10" Background="#11111111">
             <StackPanel>
-                <TextBlock FontSize="14" Text="{Binding ProjectId, StringFormat=Project: {0}}" d:Text="Project: 1" />
+                <TextBlock FontSize="14" Text="{Binding ProjectId, StringFormat=ProjectScope: {0}}" d:Text="ProjectScope: 1" />
                 <TextBlock FontSize="14" Text="{Binding SubprojectId, StringFormat=Subproject: {0}}" d:Text="Subproject: 1" />
                 <TextBlock FontSize="14" Text="{Binding ResourceId, StringFormat=Resource: {0}}" d:Text="Resource: 1" />
             </StackPanel>
         </GroupBox>
 
-        <GroupBox Header="Project (File opened)" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="10" Padding="10" FontSize="24" Background="#11111111">
+        <GroupBox Header="ProjectScope (File opened)" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="10" Padding="10" FontSize="24" Background="#11111111">
             <StackPanel Orientation="Vertical">
-                <TextBlock Text="{Binding Project.Data, StringFormat=Count: {0}}" d:Text="Count: 0" Padding="10" FontSize="16"/>
+                <TextBlock Text="{Binding ProjectScope.Data, StringFormat=Count: {0}}" d:Text="Count: 0" Padding="10" FontSize="16"/>
                 <GroupBox Header="Subproject (dependent file opened)" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="10" Padding="10" FontSize="24" Background="#11111111">
                     <StackPanel Orientation="Vertical">
                         <TextBlock Text="{Binding Subproject.Data, StringFormat=Count: {0}}" d:Text="Count: 0" Padding="10" FontSize="16" />
@@ -37,15 +37,15 @@
             </StackPanel>
         </GroupBox>
 
-        <Button Grid.Row="2" Grid.Column="0" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding NewProjectCommand}" Content="New Project" Padding="5" />
+        <Button Grid.Row="2" Grid.Column="0" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding NewProjectCommand}" Content="New ProjectScope" Padding="5" />
         <Button Grid.Row="2" Grid.Column="1" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding NewSubprojectCommand}" Content="New Subproject" Padding="5" />
         <Button Grid.Row="2" Grid.Column="2" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding NewResourceCommand}" Content="New Resource" Padding="5" />
 
-        <Button Grid.Row="3" Grid.Column="0" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding IncrementProjectCommand}" Content="Increment Project" Padding="5" />
+        <Button Grid.Row="3" Grid.Column="0" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding IncrementProjectCommand}" Content="Increment ProjectScope" Padding="5" />
         <Button Grid.Row="3" Grid.Column="1" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding IncrementSubprojectCommand}" Content="Increment Subproject" Padding="5" />
         <Button Grid.Row="3" Grid.Column="2" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding IncrementResourceCommand}" Content="Increment Resource" Padding="5" />
 
-        <Button Grid.Row="4" Grid.Column="0" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding DisposeProjectCommand}" Content="Dispose Project" Padding="5" />
+        <Button Grid.Row="4" Grid.Column="0" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding DisposeProjectCommand}" Content="Dispose ProjectScope" Padding="5" />
         <Button Grid.Row="4" Grid.Column="1" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding DisposeSubprojectCommand}" Content="Dispose Subproject" Padding="5" />
         <Button Grid.Row="4" Grid.Column="2" Margin="5,10,5,10" HorizontalAlignment="Right" Command="{Binding DisposeResourceCommand}" Content="Dispose Resource" Padding="5" />
     </Grid>

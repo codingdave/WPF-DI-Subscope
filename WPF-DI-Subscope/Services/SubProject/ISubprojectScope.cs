@@ -2,7 +2,7 @@
 {
     public interface ISubproject : IContent
     {
-        IResource Resource { get; }
+        IResourceScope Resource { get; }
 
         void CreateNewResource();
     }

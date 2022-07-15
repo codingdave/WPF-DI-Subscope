@@ -1,12 +1,12 @@
 ﻿namespace WPF_DI_Subscope.Services
 {
-    public class Resource : IResource
+    public class ResourceScope : IResourceScope
     {
         private IInstanceCounter _instanceCounter;
 
         public string Data => _instanceCounter.Value;
 
-        public Resource(IInstanceCounter instanceCounter)
+        public ResourceScope(IInstanceCounter instanceCounter)
         {
             _instanceCounter = instanceCounter;
         }

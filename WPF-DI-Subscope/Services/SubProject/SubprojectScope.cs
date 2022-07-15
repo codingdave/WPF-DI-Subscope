@@ -1,16 +1,16 @@
 ﻿namespace WPF_DI_Subscope.Services
 {
-    public class Subproject : ISubproject
+    public class SubprojectScope : ISubproject
     {
         private IInstanceCounter _instanceCounter;
 
         public string Data => _instanceCounter.Value;
 
-        public IResource Resource => _resourceProvider.Resource;
+        public IResourceScope Resource => _resourceProvider.Resource;
 
         private IResourceProvider _resourceProvider;
 
-        public Subproject(
+        public SubprojectScope(
             IResourceProvider resourceProvider,
             IInstanceCounter instanceCounter)
         {

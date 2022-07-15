@@ -1,6 +1,6 @@
 ﻿namespace WPF_DI_Subscope.Services
 {
-    public class Project : IProject
+    public class ProjectScope : IProjectScope
     {
         private IInstanceCounter _instanceCounter;
 
@@ -10,7 +10,7 @@
 
         private ISubprojectProvider _subprojectProvider;
 
-        public Project(
+        public ProjectScope(
             ISubprojectProvider subprojectProvider,
             IInstanceCounter instanceCounter)
         {

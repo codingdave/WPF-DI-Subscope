@@ -7,7 +7,7 @@ namespace WPF_DI_Subscope.Services
         private IProjectServiceProvider _projectServiceProvider;
         private IServiceScope _scope;
 
-        public IProject Project => _scope.ServiceProvider.GetRequiredService<IProject>();
+        public IProjectScope ProjectScope => _scope.ServiceProvider.GetRequiredService<IProjectScope>();
 
         public ProjectProvider(IProjectServiceProvider projectServiceProvider)
         {

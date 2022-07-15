@@ -12,7 +12,7 @@ namespace WPF_DI_Subscope.Services
             _serviceProvider = new ServiceCollection()
                 .AddTransient<IInstanceCounter, InstanceCounter>()
 
-                .AddScoped<IResource, Resource>()
+                .AddScoped<IResourceScope, ResourceScope>()
 
                 .BuildServiceProvider();
         }
