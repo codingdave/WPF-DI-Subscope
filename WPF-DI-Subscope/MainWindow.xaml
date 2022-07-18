@@ -26,10 +26,10 @@
                 <TextBlock Text="{Binding ProjectScope.Data, StringFormat=Count: {0}}" d:Text="Count: 0" Padding="10" FontSize="16"/>
                 <GroupBox Header="Subproject (dependent file opened)" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="10" Padding="10" FontSize="24" Background="#11111111">
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Text="{Binding Subproject.Data, StringFormat=Count: {0}}" d:Text="Count: 0" Padding="10" FontSize="16" />
+                        <TextBlock Text="{Binding SubprojectScope.Data, StringFormat=Count: {0}}" d:Text="Count: 0" Padding="10" FontSize="16" />
                         <GroupBox Header="Resource" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="10" Padding="10" FontSize="24" Background="#11111111">
                             <StackPanel Orientation="Vertical">
-                                <TextBlock Text="{Binding Resource.Data, StringFormat=Count: {0}}" d:Text="Count: 0" Padding="10" FontSize="16" />
+                                <TextBlock Text="{Binding ResourceScope.Data, StringFormat=Count: {0}}" d:Text="Count: 0" Padding="10" FontSize="16" />
                             </StackPanel>
                         </GroupBox>
                     </StackPanel>
