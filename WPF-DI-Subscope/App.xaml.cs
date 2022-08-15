@@ -37,7 +37,7 @@ namespace WPF_DI_Subscope
         protected async override void OnDeactivated(EventArgs e)
         {
             base.OnDeactivated(e);
-            await _host.StopAsync();
+            await _host.StopAsync().ConfigureAwait(false);
         }
     }
 }

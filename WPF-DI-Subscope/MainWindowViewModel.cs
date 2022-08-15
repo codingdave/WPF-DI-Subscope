@@ -1,6 +1,5 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System;
 using System.Globalization;
 using System.Runtime.Serialization;
 using System.Windows.Input;
@@ -16,12 +15,12 @@ namespace WPF_DI_Subscope
         private ObjectIDGenerator _resourceIdGenerator = new();
 
         [ObservableProperty]
-        [AlsoNotifyChangeFor(nameof(SubprojectScope))]
-        [AlsoNotifyChangeFor(nameof(ResourceScope))]
+        [NotifyPropertyChangedFor(nameof(SubprojectScope))]
+        [NotifyPropertyChangedFor(nameof(ResourceScope))]
         private IProjectScope _projectScope;
 
         [ObservableProperty]
-        [AlsoNotifyChangeFor(nameof(ResourceScope))]
+        [NotifyPropertyChangedFor(nameof(ResourceScope))]
         private ISubproject _subprojectScope;
 
         [ObservableProperty]
@@ -142,14 +141,14 @@ namespace WPF_DI_Subscope
             switch (e.PropertyName)
             {
                 case nameof(ProjectScope):
-                ProjectId = _projctIdGenerator.GetId(ProjectScope, out _).ToString(CultureInfo.InvariantCulture);
-                break;
+                    ProjectId = _projctIdGenerator.GetId(ProjectScope, out _).ToString(CultureInfo.InvariantCulture);
+                    break;
                 case nameof(SubprojectScope):
-                SubprojectId = _subprojectIdGenerator.GetId(SubprojectScope, out _).ToString(CultureInfo.InvariantCulture);
-                break;
+                    SubprojectId = _subprojectIdGenerator.GetId(SubprojectScope, out _).ToString(CultureInfo.InvariantCulture);
+                    break;
                 case nameof(ResourceScope):
-                ResourceId = _resourceIdGenerator.GetId(ResourceScope, out _).ToString(CultureInfo.InvariantCulture);
-                break;
+                    ResourceId = _resourceIdGenerator.GetId(ResourceScope, out _).ToString(CultureInfo.InvariantCulture);
+                    break;
             }
         }
     }
